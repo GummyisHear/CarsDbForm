@@ -2,7 +2,6 @@
 
 public class Car
 {
-    // Id, Brand, Model, RegistrationNumber, OwnerId (võõrvõti), navigeerimisomadus Owner, kogum CarService.
     public int Id { get; set; }
     public string Brand { get; set; }
     public string Model { get; set; }
@@ -19,7 +18,6 @@ public class Car
 
 public class Owner
 {
-    // Id, FullName, Phone, kogum Car.
     public int Id { get; set; }
     public string FullName { get; set; }
     public string Phone { get; set; }
@@ -28,7 +26,6 @@ public class Owner
 
 public class Service
 {
-    // Id, Name, Price, kogum CarService.
     public int Id { get; set; }
     public string Name { get; set; }
     public float Price { get; set; }
@@ -37,12 +34,6 @@ public class Service
 
 public class CarService
 {
-    //CarId(Võõrvõti).
-    //ServiceId(Võõrvõti).
-    //DateOfService(DateTime).
-    //Mileage(int).
-    //Navigeerimisomadused Car ja Service.
-
     public int CarId { get; set; }
     public int ServiceId { get; set; }
     public DateTime DateOfService { get; set; }
