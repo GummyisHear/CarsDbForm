@@ -27,27 +27,28 @@ public partial class Form1 : Form
         pictureBox1 = new PictureBox();
         owner_deleteBtn = new Button();
         owner_lisaBtn = new Button();
-        comboBox1 = new ComboBox();
-        label3 = new Label();
         label2 = new Label();
         owner_phone = new TextBox();
         label1 = new Label();
         owner_fullName = new TextBox();
         ownersDataGridView = new DataGridView();
         carsPage = new TabPage();
-        button2 = new Button();
-        button1 = new Button();
+        cars_updateBtn = new Button();
+        cars_firstBtn = new Button();
+        cars_lastBtn = new Button();
+        cars_previousBtn = new Button();
+        cars_nextBtn = new Button();
         car_deleteBtn = new Button();
         car_addBtn = new Button();
-        comboBox2 = new ComboBox();
+        cars_owner = new ComboBox();
         label8 = new Label();
         label7 = new Label();
         car_model = new Label();
         label5 = new Label();
         label4 = new Label();
-        textBox3 = new TextBox();
-        textBox1 = new TextBox();
-        car_brand = new TextBox();
+        cars_regNumber = new TextBox();
+        cars_model = new TextBox();
+        cars_brand = new TextBox();
         servicesPage = new TabPage();
         tabControl1.SuspendLayout();
         ownersPage.SuspendLayout();
@@ -67,14 +68,13 @@ public partial class Form1 : Form
         tabControl1.SelectedIndex = 0;
         tabControl1.Size = new Size(800, 450);
         tabControl1.TabIndex = 0;
+        tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
         // 
         // ownersPage
         // 
         ownersPage.Controls.Add(pictureBox1);
         ownersPage.Controls.Add(owner_deleteBtn);
         ownersPage.Controls.Add(owner_lisaBtn);
-        ownersPage.Controls.Add(comboBox1);
-        ownersPage.Controls.Add(label3);
         ownersPage.Controls.Add(label2);
         ownersPage.Controls.Add(owner_phone);
         ownersPage.Controls.Add(label1);
@@ -91,7 +91,7 @@ public partial class Form1 : Form
         // pictureBox1
         // 
         pictureBox1.Image = Properties.Resources.owner;
-        pictureBox1.Location = new Point(542, 11);
+        pictureBox1.Location = new Point(560, 11);
         pictureBox1.Name = "pictureBox1";
         pictureBox1.Size = new Size(200, 200);
         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -119,25 +119,6 @@ public partial class Form1 : Form
         owner_lisaBtn.Text = "Lisa";
         owner_lisaBtn.UseVisualStyleBackColor = true;
         owner_lisaBtn.Click += owner_lisaBtn_Click;
-        // 
-        // comboBox1
-        // 
-        comboBox1.Font = new Font("Segoe UI", 12F);
-        comboBox1.FormattingEnabled = true;
-        comboBox1.Location = new Point(105, 113);
-        comboBox1.Name = "comboBox1";
-        comboBox1.Size = new Size(200, 29);
-        comboBox1.TabIndex = 7;
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
-        label3.Location = new Point(47, 116);
-        label3.Name = "label3";
-        label3.Size = new Size(52, 21);
-        label3.TabIndex = 6;
-        label3.Text = "Autod";
         // 
         // label2
         // 
@@ -185,19 +166,22 @@ public partial class Form1 : Form
         // 
         // carsPage
         // 
-        carsPage.Controls.Add(button2);
-        carsPage.Controls.Add(button1);
+        carsPage.Controls.Add(cars_updateBtn);
+        carsPage.Controls.Add(cars_firstBtn);
+        carsPage.Controls.Add(cars_lastBtn);
+        carsPage.Controls.Add(cars_previousBtn);
+        carsPage.Controls.Add(cars_nextBtn);
         carsPage.Controls.Add(car_deleteBtn);
         carsPage.Controls.Add(car_addBtn);
-        carsPage.Controls.Add(comboBox2);
+        carsPage.Controls.Add(cars_owner);
         carsPage.Controls.Add(label8);
         carsPage.Controls.Add(label7);
         carsPage.Controls.Add(car_model);
         carsPage.Controls.Add(label5);
         carsPage.Controls.Add(label4);
-        carsPage.Controls.Add(textBox3);
-        carsPage.Controls.Add(textBox1);
-        carsPage.Controls.Add(car_brand);
+        carsPage.Controls.Add(cars_regNumber);
+        carsPage.Controls.Add(cars_model);
+        carsPage.Controls.Add(cars_brand);
         carsPage.Location = new Point(4, 24);
         carsPage.Name = "carsPage";
         carsPage.Padding = new Padding(3);
@@ -206,55 +190,91 @@ public partial class Form1 : Form
         carsPage.Text = "Autod";
         carsPage.UseVisualStyleBackColor = true;
         // 
-        // button2
+        // cars_updateBtn
         // 
-        button2.Font = new Font("Segoe UI", 24F);
-        button2.Location = new Point(25, 167);
-        button2.Name = "button2";
-        button2.Size = new Size(75, 75);
-        button2.TabIndex = 17;
-        button2.Text = "<";
-        button2.UseVisualStyleBackColor = true;
+        cars_updateBtn.Font = new Font("Segoe UI", 12F);
+        cars_updateBtn.Location = new Point(448, 276);
+        cars_updateBtn.Name = "cars_updateBtn";
+        cars_updateBtn.Size = new Size(100, 29);
+        cars_updateBtn.TabIndex = 20;
+        cars_updateBtn.Text = "Uuenda";
+        cars_updateBtn.UseVisualStyleBackColor = true;
+        cars_updateBtn.Click += cars_updateBtn_Click;
         // 
-        // button1
+        // cars_firstBtn
         // 
-        button1.Font = new Font("Segoe UI", 24F);
-        button1.Location = new Point(686, 167);
-        button1.Name = "button1";
-        button1.Size = new Size(75, 75);
-        button1.TabIndex = 16;
-        button1.Text = ">";
-        button1.UseVisualStyleBackColor = true;
+        cars_firstBtn.Font = new Font("Segoe UI", 24F);
+        cars_firstBtn.Location = new Point(33, 230);
+        cars_firstBtn.Name = "cars_firstBtn";
+        cars_firstBtn.Size = new Size(75, 75);
+        cars_firstBtn.TabIndex = 19;
+        cars_firstBtn.Text = "<<";
+        cars_firstBtn.UseVisualStyleBackColor = true;
+        cars_firstBtn.Click += cars_firstBtn_Click;
+        // 
+        // cars_lastBtn
+        // 
+        cars_lastBtn.Font = new Font("Segoe UI", 24F);
+        cars_lastBtn.Location = new Point(686, 230);
+        cars_lastBtn.Name = "cars_lastBtn";
+        cars_lastBtn.Size = new Size(75, 75);
+        cars_lastBtn.TabIndex = 18;
+        cars_lastBtn.Text = ">>";
+        cars_lastBtn.UseVisualStyleBackColor = true;
+        cars_lastBtn.Click += cars_lastBtn_Click;
+        // 
+        // cars_previousBtn
+        // 
+        cars_previousBtn.Font = new Font("Segoe UI", 24F);
+        cars_previousBtn.Location = new Point(33, 147);
+        cars_previousBtn.Name = "cars_previousBtn";
+        cars_previousBtn.Size = new Size(75, 75);
+        cars_previousBtn.TabIndex = 17;
+        cars_previousBtn.Text = "<";
+        cars_previousBtn.UseVisualStyleBackColor = true;
+        cars_previousBtn.Click += cars_previousBtn_Click;
+        // 
+        // cars_nextBtn
+        // 
+        cars_nextBtn.Font = new Font("Segoe UI", 24F);
+        cars_nextBtn.Location = new Point(686, 147);
+        cars_nextBtn.Name = "cars_nextBtn";
+        cars_nextBtn.Size = new Size(75, 75);
+        cars_nextBtn.TabIndex = 16;
+        cars_nextBtn.Text = ">";
+        cars_nextBtn.UseVisualStyleBackColor = true;
+        cars_nextBtn.Click += cars_nextBtn_Click;
         // 
         // car_deleteBtn
         // 
         car_deleteBtn.Font = new Font("Segoe UI", 12F);
-        car_deleteBtn.Location = new Point(406, 280);
+        car_deleteBtn.Location = new Point(342, 276);
         car_deleteBtn.Name = "car_deleteBtn";
         car_deleteBtn.Size = new Size(100, 29);
         car_deleteBtn.TabIndex = 15;
         car_deleteBtn.Text = "Kustuta";
         car_deleteBtn.UseVisualStyleBackColor = true;
+        car_deleteBtn.Click += car_deleteBtn_Click_1;
         // 
         // car_addBtn
         // 
         car_addBtn.Font = new Font("Segoe UI", 12F);
-        car_addBtn.Location = new Point(279, 280);
+        car_addBtn.Location = new Point(236, 276);
         car_addBtn.Name = "car_addBtn";
         car_addBtn.Size = new Size(100, 29);
         car_addBtn.TabIndex = 14;
         car_addBtn.Text = "Lisa";
         car_addBtn.UseVisualStyleBackColor = true;
-        car_addBtn.Click += button1_Click;
+        car_addBtn.Click += car_addBtn_Click;
         // 
-        // comboBox2
+        // cars_owner
         // 
-        comboBox2.Font = new Font("Segoe UI", 12F);
-        comboBox2.FormattingEnabled = true;
-        comboBox2.Location = new Point(300, 198);
-        comboBox2.Name = "comboBox2";
-        comboBox2.Size = new Size(200, 29);
-        comboBox2.TabIndex = 13;
+        cars_owner.Font = new Font("Segoe UI", 12F);
+        cars_owner.FormattingEnabled = true;
+        cars_owner.Location = new Point(300, 198);
+        cars_owner.Name = "cars_owner";
+        cars_owner.Size = new Size(200, 29);
+        cars_owner.TabIndex = 13;
         // 
         // label8
         // 
@@ -295,7 +315,6 @@ public partial class Form1 : Form
         label5.Size = new Size(79, 21);
         label5.TabIndex = 9;
         label5.Text = "Automark";
-        label5.Click += label5_Click;
         // 
         // label4
         // 
@@ -307,30 +326,29 @@ public partial class Form1 : Form
         label4.TabIndex = 8;
         label4.Text = "Autod";
         // 
-        // textBox3
+        // cars_regNumber
         // 
-        textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
-        textBox3.Location = new Point(300, 152);
-        textBox3.Name = "textBox3";
-        textBox3.Size = new Size(200, 29);
-        textBox3.TabIndex = 6;
+        cars_regNumber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
+        cars_regNumber.Location = new Point(300, 152);
+        cars_regNumber.Name = "cars_regNumber";
+        cars_regNumber.Size = new Size(200, 29);
+        cars_regNumber.TabIndex = 6;
         // 
-        // textBox1
+        // cars_model
         // 
-        textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
-        textBox1.Location = new Point(300, 105);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new Size(200, 29);
-        textBox1.TabIndex = 5;
+        cars_model.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
+        cars_model.Location = new Point(300, 105);
+        cars_model.Name = "cars_model";
+        cars_model.Size = new Size(200, 29);
+        cars_model.TabIndex = 5;
         // 
-        // car_brand
+        // cars_brand
         // 
-        car_brand.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
-        car_brand.Location = new Point(300, 60);
-        car_brand.Name = "car_brand";
-        car_brand.Size = new Size(200, 29);
-        car_brand.TabIndex = 4;
-        car_brand.TextChanged += textBox2_TextChanged;
+        cars_brand.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 186);
+        cars_brand.Location = new Point(300, 60);
+        cars_brand.Name = "cars_brand";
+        cars_brand.Size = new Size(200, 29);
+        cars_brand.TabIndex = 4;
         // 
         // servicesPage
         // 
@@ -365,24 +383,25 @@ public partial class Form1 : Form
     private TextBox owner_fullName;
     private Label label2;
     private TextBox owner_phone;
-    private Label label3;
     private Button owner_lisaBtn;
-    private ComboBox comboBox1;
     private Button owner_deleteBtn;
     private PictureBox pictureBox1;
-    private TextBox textBox1;
-    private TextBox car_brand;
-    private TextBox textBox3;
+    private TextBox cars_model;
+    private TextBox cars_brand;
+    private TextBox cars_regNumber;
     private Label label5;
     private Label label4;
     private Label label8;
     private Label label7;
     private Label car_model;
-    private ComboBox comboBox2;
+    private ComboBox cars_owner;
     private Button car_addBtn;
     private Button car_deleteBtn;
-    private Button button2;
-    private Button button1;
+    private Button cars_previousBtn;
+    private Button cars_nextBtn;
+    private Button cars_firstBtn;
+    private Button cars_lastBtn;
+    private Button cars_updateBtn;
     private TabPage carsPage;
 
     private void LoadOwners()
@@ -452,18 +471,153 @@ public partial class Form1 : Form
         MessageBox.Show("Uus omanik lisatud!");
     }
 
-    private void textBox2_TextChanged(object sender, EventArgs e)
-    {
+    private int SelectedCarIndex = 0;
 
+    private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (tabControl1.SelectedTab == carsPage)
+        {
+            LoadOwnersToComboBox();
+            UpdateCarInfo();
+        }
+        if (tabControl1.SelectedTab == ownersPage)
+        {
+            LoadOwners();
+        }
     }
 
-    private void label5_Click(object sender, EventArgs e)
+    private void UpdateCarInfo()
     {
+        var cars = _db.Cars.Include(c => c.Owner).ToList();
 
+        if (cars.Count == 0 || SelectedCarIndex < 0 || SelectedCarIndex >= cars.Count)
+        {
+            cars_brand.Text = "";
+            cars_model.Text = "";
+            cars_regNumber.Text = "";
+            cars_owner.SelectedIndex = -1;
+            return;
+        }
+
+        var car = cars[SelectedCarIndex];
+        cars_brand.Text = car.Brand;
+        cars_model.Text = car.Model;
+        cars_regNumber.Text = car.RegistrationNumber;
+
+        cars_owner.SelectedValue = car.OwnerId;
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void cars_nextBtn_Click(object sender, EventArgs e)
     {
+        if (SelectedCarIndex < _db.Cars.Count())
+            SelectedCarIndex++;
 
+        UpdateCarInfo();
+    }
+
+
+    private void cars_previousBtn_Click(object sender, EventArgs e)
+    {
+        if (SelectedCarIndex > 0)
+            SelectedCarIndex--;
+
+        UpdateCarInfo();
+    }
+
+
+    private void cars_lastBtn_Click(object sender, EventArgs e)
+    {
+        if (_db.Cars.Count() == 0)
+        {
+            UpdateCarInfo();
+            return;
+        }
+
+        SelectedCarIndex = _db.Cars.Count() - 1;
+        UpdateCarInfo();
+    }
+
+    private void cars_firstBtn_Click(object sender, EventArgs e)
+    {
+        if (_db.Cars.Count() == 0)
+        {
+            UpdateCarInfo();
+            return;
+        }
+
+        SelectedCarIndex = 0;
+        UpdateCarInfo();
+    }
+
+    private void car_addBtn_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(cars_brand.Text))
+        {
+            MessageBox.Show("Kirjuta õige automark!");
+            return;
+        }
+
+        if (cars_owner.SelectedIndex == -1)
+        {
+            MessageBox.Show("Vali omanik!");
+            return;
+        }
+
+        var car = new Car()
+        {
+            Brand = cars_brand.Text,
+            Model = cars_model.Text,
+            RegistrationNumber = cars_regNumber.Text,
+            OwnerId = (int)cars_owner.SelectedValue
+        };
+
+        _db.Cars.Add(car);
+        _db.SaveChanges();
+
+        SelectedCarIndex = _db.Cars.Count() - 1;
+
+        UpdateCarInfo();
+
+        MessageBox.Show("Auto lisatud!");
+    }
+
+
+    private void LoadOwnersToComboBox()
+    {
+        var owners = _db.Owners.ToList();
+
+        cars_owner.DataSource = owners;
+        cars_owner.DisplayMember = "FullName";
+        cars_owner.ValueMember = "Id";
+    }
+
+    private void car_deleteBtn_Click_1(object sender, EventArgs e)
+    {
+        var cars = _db.Cars.Include(c => c.Owner).ToList();
+        var car = cars.ElementAtOrDefault(SelectedCarIndex);
+        if (car == null)
+            return;
+
+        _db.Cars.Remove(car);
+        _db.SaveChanges();
+
+        UpdateCarInfo();
+    }
+
+    private void cars_updateBtn_Click(object sender, EventArgs e)
+    {
+        var cars = _db.Cars.Include(c => c.Owner).ToList();
+        var car = cars.ElementAtOrDefault(SelectedCarIndex);
+        if (car == null)
+            return;
+
+        car.Brand = cars_brand.Text;
+        car.Model = cars_model.Text;
+        car.RegistrationNumber = cars_regNumber.Text;
+        car.OwnerId = (int)cars_owner.SelectedValue;
+
+        _db.SaveChanges();
+
+        UpdateCarInfo();
     }
 }

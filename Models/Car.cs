@@ -10,6 +10,8 @@ public class Car
     public Owner Owner { get; set; }
     public List<CarService> CarServices { get; set; }
 
+    public string DisplayName => $"{Brand} {Model} ({RegistrationNumber})";
+
     public override string ToString()
     {
         return $"{Brand} {Model} ({RegistrationNumber})";
@@ -22,6 +24,11 @@ public class Owner
     public string FullName { get; set; }
     public string Phone { get; set; }
     public List<Car> Cars { get; set; }
+
+    public override string ToString()
+    {
+        return $"{FullName}";
+    }
 }
 
 public class Service
