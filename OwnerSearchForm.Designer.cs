@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerSearchForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
@@ -40,6 +41,7 @@
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
@@ -57,64 +59,41 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Location = new Point(12, 139);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(493, 299);
-            dataGridView1.TabIndex = 0;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(248, 107);
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            label3.Size = new Size(56, 21);
-            label3.TabIndex = 16;
-            label3.Text = "Otsing";
             // 
             // searchTxt
             // 
-            searchTxt.Font = new Font("Segoe UI", 12F);
-            searchTxt.Location = new Point(310, 104);
+            resources.ApplyResources(searchTxt, "searchTxt");
             searchTxt.Name = "searchTxt";
-            searchTxt.Size = new Size(195, 29);
-            searchTxt.TabIndex = 15;
             searchTxt.TextChanged += searchTxt_TextChanged;
             // 
             // confirmBtn
             // 
-            confirmBtn.Font = new Font("Segoe UI", 12F);
-            confirmBtn.Location = new Point(12, 104);
+            resources.ApplyResources(confirmBtn, "confirmBtn");
             confirmBtn.Name = "confirmBtn";
-            confirmBtn.Size = new Size(100, 29);
-            confirmBtn.TabIndex = 14;
-            confirmBtn.Text = "Vali";
             confirmBtn.UseVisualStyleBackColor = true;
             confirmBtn.Click += confirmBtn_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F);
-            label1.Location = new Point(127, 9);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(251, 45);
-            label1.TabIndex = 17;
-            label1.Text = "Omaniku Otsing";
             // 
             // OwnerSearchForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(518, 450);
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(searchTxt);
             Controls.Add(confirmBtn);
             Controls.Add(dataGridView1);
-            Font = new Font("Segoe UI", 9F);
             Name = "OwnerSearchForm";
-            Text = "Omaniku Otsing";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

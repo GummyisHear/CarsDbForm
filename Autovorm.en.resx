@@ -117,36 +117,147 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="imgList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="ownersPage.Text" xml:space="preserve">
+    <value>Owners</value>
+  </data>
+  <data name="carsPage.Text" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="servicesPage.Text" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="owner_deleteBtn.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="owner_lisaBtn.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 49</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 14</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 21</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
   <data name="imgList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
-        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJAUAAAJNU0Z0AUkBTAMBAQAB
-        KAEAASgBAAEdAQABHQEABP8BIQEACP8BQgFNATYHAAE2AwABKAMAAXQDAAEdAwABAQEAASAFAAGQATT/
-        AP8A/wD/AP8A3wADDAEPA1EBoQNDAXf/AMEAAwUBBgJWAVgBvQIAASsB/wNMAZH/AL0ABAEDUQGgAgAB
-        KwH/AjQBSAHtAxcBH/8AvQADRgF9AgABKwH/AhoBOgH4AyoBP/8AoQADBQEGAwkBDAQBEAADOAFbAgUB
-        MAH+AgUBMAH+AzgBXP8AmQACJgEnATkDUAGdAkcBUwHgAgUBMAH+AgABKwH/Ah4BPAH1AlYBWQHDA0AB
-        cAMLAQ4DKQE9AhoBOgH4AgABKwH/A0YBfv8AlQADDwEUAlMBVAGtAgABKwH/AiMBPgH0A1UBtANKAYoD
-        RgGBA1ABmgJOAVcB1gIAASsB/wI6AUkB6gI/AU0B5wIAASsB/wNRAaAEAf8AkQADFwEfAkkBUwHdAhwB
-        NgH2A0QBewMLAQ4UAAImAScBOQJUAVcBxgIAASsB/wJMAVYB2wMFAQb/AJEAAwgBCgJRAVkB1AI6AUsB
-        6QMjATIgAAMDAQQDTgGXAgABKwH/AzoBYP8AkQADSQGHAhQBMAH6AyUBNygABAEDVAGvAisBRAHxAxIB
-        F/8AiQADDAEPAiMBPgH0A0wBjjAAAxIBGAIjAT4B9ANIAYT/AIkAAzgBWwIFATAB/gMYASA0AAJPAVAB
-        ngJMAVYB2/8AiQADTQGSAkwBVgHZOAADNgFZAgABKwH/Aw8BE/8AhQADVAGrAlUBVgG6OAADJwE6AgAB
-        KwH/Ax8BLP8AhQACUgFTAacCVQFXAb44AAMpAT4CAAErAf8DHQEp/wCFAANJAYcCQQFQAeY4AAM8AWYC
-        CgErAfwDCQEL/wCFAAMvAUkCAAErAf8DJQE2NAADVQG0AlQBWQHJ/wCJAAMEAQUCPwFPAeQCVAFVAbAw
-        AAMjATICCgE1Af0DPgFq/wCNAAM7AWMCAAErAf8DOgFiKAADCwEOAk8BWAHTAksBVAHcAwYBCP8AjQAE
-        AQJTAVQBrQIPASsB+wM9AWcgAAMTARoCVQFZAcgCHAE5AfcDJgE4/wCVAAMHAQkCVAFWAbICAAErAf8C
-        VQFXAbkDKwFBBAIMAAMRARYDQwF3AjQBSAHtAikBRAHyAy4BSP8AnQAEAgNAAXACMQFHAe4CAAErAf8C
-        LwFFAe8CVAFXAccCVQFYAb8CTQFWAdgCCgE1Af0CAAErAf8CVAFXAbsDGwEm/wCpAAMKAQ0DOgFgA1EB
-        ogJUAVcBxgJTAVgBzQJUAVcBuANJAYUDIwEz/wD/AP8A/wD/AP8A/wADAAFCAU0BPgcAAT4DAAEoAwAB
-        dAMAAR0DAAEBAQABAQUAAdABARYAA/8BAAP/AfgMAAP/AfgMAAP/AfgMAAL/AfwBeAwAAv8B+AF4DAAC
-        /wHwAXgMAAL/AfAB+AwAAf8B8QHhAfgMAAH/AYABAwH4DAAB/gEAAQMB+AwAAfwBHwEHAfgMAAH4AX8B
-        hwH4DAAB+AH/AcMB+AwAAfEB/wHjAfgMAAHxAf8B8wH4DAAB8wH/AfEB+AwAAfMB/wHxAfgMAAHzAf8B
-        8QH4DAAB8wH/AfEB+AwAAfEB/wHzAfgMAAHxAf8B4wH4DAAB+AH/AcMB+AwAAfgBfwGHAfgMAAH8AQ4B
-        DwH4DAAB/gEAAR8B+AwAAf8BgAF/AfgMAAP/AfgMAAP/AfgMAAP/AfgMAAs=
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA6gQAAAJNU0Z0AUkBTAMBAQAB
+        aAEAAWgBAAEdAQABHQEABP8BIQEACP8BQgFNATYHAAE2AwABKAMAAXQDAAEdAwABAQEAASAFAAGQATT/
+        AP8A/wD/AP8A3wADDAEPA1EBoQNDAXf/AMEAAwUBBgNYAb0CAAErAf8DTAGR/wC9AAQBA1IBoAIAASsB
+        /wJUAVwB7QMXAR//AL0AA0YBfQIAASsB/wI1AUIB+AMqAT//AKEAAwUBBgMJAQwEARAAAzgBWwINATgB
+        /gINATgB/gM4AVz/AJkAAiYBJwE5A1ABnQJfAWAB4AINATgB/gIAASsB/wI9AUgB9QNZAcMDQAFwAwsB
+        DgMpAT0CNQFCAfgCAAErAf8DRgF+/wCVAAMPARQDVQGtAgABKwH/AkEBUAH0A1UBtANKAYoDRgGBA1AB
+        mgNcAdYCAAErAf8CVQFaAeoDXAHnAgABKwH/A1IBoAQB/wCRAAMXAR8DXgHdAjUBSAH2A0QBewMLAQ4U
+        AAImAScBOQNZAcYCAAErAf8CXwFgAdsDBQEG/wCRAAMIAQoDXQHUAlgBWgHpAyMBMiAAAwMBBANOAZcC
+        AAErAf8DOgFg/wCRAANJAYcCIQE8AfoDJQE3KAAEAQNVAa8CTgFXAfEDEgEX/wCJAAMMAQ8CQQFQAfQD
+        TAGOMAADEgEYAkEBUAH0A0gBhP8AiQADOAFbAg0BOAH+AxgBIDQAA1EBngJfAWAB2/8AiQADTQGSA1wB
+        2TgAAzYBWQIAASsB/wMPARP/AIUAA1QBqwNYAbo4AAMnAToCAAErAf8DHwEs/wCFAANTAacDWQG+OAAD
+        KQE+AgABKwH/Ax0BKf8AhQADSQGHAlsBYAHmOAADPAFmAhoBKwH8AwkBC/8AhQADLwFJAgABKwH/AyUB
+        NjQAA1UBtANdAcn/AIkAAwQBBQNbAeQDVgGwMAADIwEyAhoBQAH9Az4Bav8AjQADOwFjAgABKwH/AzoB
+        YigAAwsBDgNbAdMDXQHcAwYBCP8AjQAEAQNVAa0CIQErAfsDPQFnIAADEwEaA1wByAI4AU0B9wMmATj/
+        AJUAAwcBCQNWAbICAAErAf8DVwG5AysBQQQCDAADEQEWA0MBdwJUAVwB7QJKAVcB8gMuAUj/AJ0ABAID
+        QAFwAlMBWAHuAgABKwH/Ak4BVwHvA1oBxwNaAb8DWwHYAhoBQAH9AgABKwH/A1kBuwMbASb/AKkAAwoB
+        DQM6AWADUQGiA1kBxgNbAc0DWAG4A0kBhQMjATP/AP8A/wD/AP8A/wD/AAMAAUIBTQE+BwABPgMAASgD
+        AAF0AwABHQMAAQEBAAEBBQAB0AEBFgAD/wEAA/8B+AwAA/8B+AwAA/8B+AwAAv8B/AF4DAAC/wH4AXgM
+        AAL/AfABeAwAAv8B8AH4DAAB/wHxAeEB+AwAAf8BgAEDAfgMAAH+AQABAwH4DAAB/AEfAQcB+AwAAfgB
+        fwGHAfgMAAH4Af8BwwH4DAAB8QH/AeMB+AwAAfEB/wHzAfgMAAHzAf8B8QH4DAAB8wH/AfEB+AwAAfMB
+        /wHxAfgMAAHzAf8B8QH4DAAB8QH/AfMB+AwAAfEB/wHjAfgMAAH4Af8BwwH4DAAB+AF/AYcB+AwAAfwB
+        DgEPAfgMAAH+AQABHwH4DAAB/wGAAX8B+AwAA/8B+AwAA/8B+AwAA/8B+AwACw==
 </value>
+  </data>
+  <data name="cars_updateBtn.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="car_deleteBtn.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="car_addBtn.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 202</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 63</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 21</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="service_deleteBtn.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="service_insertBtn.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 88</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 50</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 15</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 21</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Car</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Carform</value>
   </data>
 </root>
