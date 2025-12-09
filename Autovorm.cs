@@ -13,6 +13,13 @@ public partial class Autovorm : Form
 
     public Autovorm()
     {
+        /*
+        using (var db = new CarsDbContext())
+        {
+            db.Database.Migrate();
+        }
+        */
+
         string lang = Properties.Settings.Default.Language;
         if (string.IsNullOrEmpty(lang)) lang = "et";
         Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
