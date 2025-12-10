@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Forms;
 using WinFormsApp1.Data;
 using WinFormsApp1.Models;
 
@@ -13,13 +13,6 @@ public partial class Autovorm : Form
 
     public Autovorm()
     {
-        /*
-        using (var db = new CarsDbContext())
-        {
-            db.Database.Migrate();
-        }
-        */
-
         string lang = Properties.Settings.Default.Language;
         if (string.IsNullOrEmpty(lang)) lang = "et";
         Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
@@ -36,10 +29,13 @@ public partial class Autovorm : Form
 
     public void InitializeComponent()
     {
-        components = new System.ComponentModel.Container();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autovorm));
+        components = new Container();
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(Autovorm));
         tabControl1 = new TabControl();
         ownersPage = new TabPage();
+        owner_updateBtn = new Button();
+        label13 = new Label();
+        language_comboBox = new ComboBox();
         label3 = new Label();
         owners_searchTxt = new TextBox();
         pictureBox1 = new PictureBox();
@@ -70,9 +66,11 @@ public partial class Autovorm : Form
         cars_model = new TextBox();
         cars_brand = new TextBox();
         servicesPage = new TabPage();
+        label14 = new Label();
+        service_time = new DateTimePicker();
         teenused_carSearchBtn = new Button();
         label12 = new Label();
-        textBox1 = new TextBox();
+        services_search = new TextBox();
         service_deleteBtn = new Button();
         service_insertBtn = new Button();
         service_dataGrid = new DataGridView();
@@ -84,15 +82,14 @@ public partial class Autovorm : Form
         service_date = new DateTimePicker();
         label9 = new Label();
         label6 = new Label();
-        language_comboBox = new ComboBox();
-        label13 = new Label();
+        service_updateBtn = new Button();
         tabControl1.SuspendLayout();
         ownersPage.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)ownersDataGridView).BeginInit();
+        ((ISupportInitialize)pictureBox1).BeginInit();
+        ((ISupportInitialize)ownersDataGridView).BeginInit();
         carsPage.SuspendLayout();
         servicesPage.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)service_dataGrid).BeginInit();
+        ((ISupportInitialize)service_dataGrid).BeginInit();
         SuspendLayout();
         // 
         // tabControl1
@@ -107,6 +104,7 @@ public partial class Autovorm : Form
         // 
         // ownersPage
         // 
+        ownersPage.Controls.Add(owner_updateBtn);
         ownersPage.Controls.Add(label13);
         ownersPage.Controls.Add(language_comboBox);
         ownersPage.Controls.Add(label3);
@@ -122,6 +120,25 @@ public partial class Autovorm : Form
         resources.ApplyResources(ownersPage, "ownersPage");
         ownersPage.Name = "ownersPage";
         ownersPage.UseVisualStyleBackColor = true;
+        // 
+        // owner_updateBtn
+        // 
+        resources.ApplyResources(owner_updateBtn, "owner_updateBtn");
+        owner_updateBtn.Name = "owner_updateBtn";
+        owner_updateBtn.UseVisualStyleBackColor = true;
+        owner_updateBtn.Click += owner_updateBtn_Click;
+        // 
+        // label13
+        // 
+        resources.ApplyResources(label13, "label13");
+        label13.Name = "label13";
+        // 
+        // language_comboBox
+        // 
+        resources.ApplyResources(language_comboBox, "language_comboBox");
+        language_comboBox.FormattingEnabled = true;
+        language_comboBox.Name = "language_comboBox";
+        language_comboBox.SelectedIndexChanged += language_SelectedIndexChanged;
         // 
         // label3
         // 
@@ -180,6 +197,7 @@ public partial class Autovorm : Form
         ownersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         resources.ApplyResources(ownersDataGridView, "ownersDataGridView");
         ownersDataGridView.Name = "ownersDataGridView";
+        ownersDataGridView.RowHeaderMouseClick += ownersDataGridView_RowHeaderMouseClick;
         // 
         // carsPage
         // 
@@ -316,9 +334,12 @@ public partial class Autovorm : Form
         // 
         // servicesPage
         // 
+        servicesPage.Controls.Add(service_updateBtn);
+        servicesPage.Controls.Add(label14);
+        servicesPage.Controls.Add(service_time);
         servicesPage.Controls.Add(teenused_carSearchBtn);
         servicesPage.Controls.Add(label12);
-        servicesPage.Controls.Add(textBox1);
+        servicesPage.Controls.Add(services_search);
         servicesPage.Controls.Add(service_deleteBtn);
         servicesPage.Controls.Add(service_insertBtn);
         servicesPage.Controls.Add(service_dataGrid);
@@ -334,6 +355,18 @@ public partial class Autovorm : Form
         servicesPage.Name = "servicesPage";
         servicesPage.UseVisualStyleBackColor = true;
         // 
+        // label14
+        // 
+        resources.ApplyResources(label14, "label14");
+        label14.Name = "label14";
+        // 
+        // service_time
+        // 
+        resources.ApplyResources(service_time, "service_time");
+        service_time.Format = DateTimePickerFormat.Custom;
+        service_time.Name = "service_time";
+        service_time.ShowUpDown = true;
+        // 
         // teenused_carSearchBtn
         // 
         resources.ApplyResources(teenused_carSearchBtn, "teenused_carSearchBtn");
@@ -347,10 +380,11 @@ public partial class Autovorm : Form
         resources.ApplyResources(label12, "label12");
         label12.Name = "label12";
         // 
-        // textBox1
+        // services_search
         // 
-        resources.ApplyResources(textBox1, "textBox1");
-        textBox1.Name = "textBox1";
+        resources.ApplyResources(services_search, "services_search");
+        services_search.Name = "services_search";
+        services_search.TextChanged += services_search_TextChanged;
         // 
         // service_deleteBtn
         // 
@@ -371,6 +405,7 @@ public partial class Autovorm : Form
         service_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         resources.ApplyResources(service_dataGrid, "service_dataGrid");
         service_dataGrid.Name = "service_dataGrid";
+        service_dataGrid.RowHeaderMouseClick += service_dataGrid_RowHeaderMouseClick;
         // 
         // service_serviceComboBox
         // 
@@ -403,6 +438,7 @@ public partial class Autovorm : Form
         // service_date
         // 
         resources.ApplyResources(service_date, "service_date");
+        service_date.Format = DateTimePickerFormat.Custom;
         service_date.Name = "service_date";
         // 
         // label9
@@ -416,17 +452,12 @@ public partial class Autovorm : Form
         label6.Name = "label6";
         label6.Click += label6_Click;
         // 
-        // comboBox1
+        // service_updateBtn
         // 
-        resources.ApplyResources(language_comboBox, "comboBox1");
-        language_comboBox.FormattingEnabled = true;
-        language_comboBox.Name = "comboBox1";
-        language_comboBox.SelectedIndexChanged += language_SelectedIndexChanged;
-        // 
-        // label13
-        // 
-        resources.ApplyResources(label13, "label13");
-        label13.Name = "label13";
+        resources.ApplyResources(service_updateBtn, "service_updateBtn");
+        service_updateBtn.Name = "service_updateBtn";
+        service_updateBtn.UseVisualStyleBackColor = true;
+        service_updateBtn.Click += service_updateBtn_Click;
         // 
         // Autovorm
         // 
@@ -436,19 +467,18 @@ public partial class Autovorm : Form
         tabControl1.ResumeLayout(false);
         ownersPage.ResumeLayout(false);
         ownersPage.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-        ((System.ComponentModel.ISupportInitialize)ownersDataGridView).EndInit();
+        ((ISupportInitialize)pictureBox1).EndInit();
+        ((ISupportInitialize)ownersDataGridView).EndInit();
         carsPage.ResumeLayout(false);
         carsPage.PerformLayout();
         servicesPage.ResumeLayout(false);
         servicesPage.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)service_dataGrid).EndInit();
+        ((ISupportInitialize)service_dataGrid).EndInit();
         ResumeLayout(false);
     }
 
     private TabControl tabControl1;
     private TabPage ownersPage;
-    private TabPage servicesPage;
     private DataGridView ownersDataGridView;
     private Label label1;
     private TextBox owner_fullName;
@@ -475,27 +505,31 @@ public partial class Autovorm : Form
     private Button cars_updateBtn;
     private Label label3;
     private TextBox owners_searchTxt;
-    private Label label9;
-    private Label label6;
-    private Label label10;
-    private DateTimePicker service_date;
-    private Label label11;
-    private TextBox service_mileage;
-    private ComboBox service_carComboBox;
-    private ComboBox service_serviceComboBox;
-    private DataGridView service_dataGrid;
-    private Label label12;
-    private TextBox textBox1;
-    private Button service_deleteBtn;
-    private Button service_insertBtn;
-    private Button teenused_carSearchBtn;
     private ImageList imgList;
-    private System.ComponentModel.IContainer components;
+    private IContainer components;
     private Button cars_ownerSearchBtn;
     private Label label13;
     private ComboBox language_comboBox;
     private TabPage carsPage;
-
+    private TabPage servicesPage;
+    private Label label14;
+    private DateTimePicker service_time;
+    private Button teenused_carSearchBtn;
+    private Label label12;
+    private TextBox services_search;
+    private Button service_deleteBtn;
+    private Button service_insertBtn;
+    private DataGridView service_dataGrid;
+    private ComboBox service_serviceComboBox;
+    private ComboBox service_carComboBox;
+    private Label label11;
+    private TextBox service_mileage;
+    private Label label10;
+    private DateTimePicker service_date;
+    private Label label9;
+    private Label label6;
+    private Button owner_updateBtn;
+    private Button service_updateBtn;
     private static readonly List<string> Languages = ["Eesti", "English"];
 
     private void LoadOwners()
@@ -506,6 +540,7 @@ public partial class Autovorm : Form
             .Where(i => filter == "" || i.FullName.Contains(filter) || i.Phone.Contains(filter))
             .Select(i => new
             {
+                Owner = i,
                 i.Id,
                 i.FullName,
                 i.Phone,
@@ -513,6 +548,7 @@ public partial class Autovorm : Form
             }).ToList();
 
         ownersDataGridView.DataSource = owners;
+        ownersDataGridView.Columns["Owner"].Visible = false;
 
         language_comboBox.DataSource = Languages;
     }
@@ -539,6 +575,8 @@ public partial class Autovorm : Form
 
         LoadOwners();
         MessageBox.Show("Omanik kustutatud!");
+
+        SelectedOwner = null;
     }
 
     private void owner_lisaBtn_Click(object sender, EventArgs e)
@@ -569,6 +607,8 @@ public partial class Autovorm : Form
         owner_fullName.Text = "";
         owner_phone.Text = "";
         MessageBox.Show("Uus omanik lisatud!");
+
+        SelectedOwner = null;
     }
 
     private int SelectedCarIndex = 0;
@@ -747,6 +787,21 @@ public partial class Autovorm : Form
         service_serviceComboBox.DataSource = services;
         service_serviceComboBox.DisplayMember = "Name";
         service_serviceComboBox.ValueMember = "Id";
+
+        var filter = services_search.Text;
+        var carServicesData = _db.CarServices.Include(i => i.Service).Include(i => i.Car).AsEnumerable()
+           .Where(i => filter == "" || i.Match(filter))
+           .Select(i => new
+           {
+               CarService = i,
+               Car = i.Car,
+               Service = i.Service,
+               Date = i.DateOfService,
+               Mileage = i.Mileage,
+           }).ToList();
+
+        service_dataGrid.DataSource = carServicesData;
+        service_dataGrid.Columns["CarService"].Visible = false;
     }
 
     private void teenused_carSearchBtn_Click(object sender, EventArgs e)
@@ -793,15 +848,31 @@ public partial class Autovorm : Form
             return;
         }
 
+        var date = service_date.Value.Date;
+        var time = service_time.Value;
+        var dateTime = date
+            .AddHours(time.Hour)
+            .AddMinutes(time.Minute)
+            .AddSeconds(time.Second);
+
         var carService = new CarService()
         {
             CarId = (service_carComboBox.SelectedItem as Car)!.Id,
             ServiceId = (service_serviceComboBox.SelectedItem as Service)!.Id,
-            DateOfService = service_date.Value,
+            DateOfService = dateTime,
             Mileage = int.Parse(service_mileage.Text)
         };
 
-        _db.CarServices.Add(carService);
+        try
+        {
+            _db.CarServices.Add(carService);
+        }
+        catch
+        {
+            MessageBox.Show("Teenus selle andmetega on juba lisatud.");
+            return;
+        }
+
         _db.SaveChanges();
 
         LoadTeenused();
@@ -809,9 +880,24 @@ public partial class Autovorm : Form
         MessageBox.Show("Teenus lisatud!");
     }
 
+    private CarService? SelectedCarService;
+
     private void service_deleteBtn_Click(object sender, EventArgs e)
     {
+        if (service_dataGrid.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Vali rida mida tahad kustutada!");
+            return;
+        }
 
+        var carService = (CarService)service_dataGrid.SelectedRows[0].Cells["CarService"].Value;
+
+        _db.CarServices.Remove(carService);
+        _db.SaveChanges();
+
+        LoadTeenused();
+
+        SelectedCarService = null;
     }
 
     private bool _isFlashing;
@@ -879,5 +965,104 @@ public partial class Autovorm : Form
         }
 
         resource.ApplyResources(control, control.Name);
+    }
+
+    private void ownersDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+        var row = ownersDataGridView.SelectedRows[0];
+        var owner = (Owner)row.Cells["Owner"].Value;
+
+        PutSelectedOwner(owner);
+    }
+
+    private Owner? SelectedOwner;
+
+    private void PutSelectedOwner(Owner owner)
+    {
+        SelectedOwner = owner;
+        owner_fullName.Text = owner.FullName;
+        owner_phone.Text = owner.Phone;
+    }
+
+    private void ClearOwnerFields()
+    {
+        owner_fullName.Text = "";
+        owner_phone.Text = "";
+    }
+
+    private void owner_updateBtn_Click(object sender, EventArgs e)
+    {
+        if (SelectedOwner == null)
+            return;
+
+        var fullName = owner_fullName.Text;
+        var phone = owner_phone.Text;
+
+        SelectedOwner.FullName = fullName;
+        SelectedOwner.Phone = phone;
+        _db.SaveChanges();
+
+        SelectedOwner = null;
+        ClearOwnerFields();
+        LoadOwners();
+    }
+
+    private void service_dataGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+        var row = service_dataGrid.SelectedRows[0];
+        var carService = (CarService)row.Cells["CarService"].Value;
+
+        PutSelectedCarService(carService);
+    }
+
+    private void services_search_TextChanged(object sender, EventArgs e)
+    {
+        LoadTeenused();
+    }
+
+    private void service_updateBtn_Click(object sender, EventArgs e)
+    {
+        if (SelectedCarService == null)
+            return;
+
+        var date = service_date.Value.Date;
+        var time = service_time.Value;
+        var dateTime = date
+            .AddHours(time.Hour)
+            .AddMinutes(time.Minute)
+            .AddSeconds(time.Second);
+        var carId = (service_carComboBox.SelectedItem as Car)!.Id;
+        var serviceId = (service_serviceComboBox.SelectedItem as Service)!.Id;
+        var mileage = int.Parse(service_mileage.Text);
+
+        SelectedCarService.DateOfService = dateTime;
+        SelectedCarService.CarId = carId;
+        SelectedCarService.ServiceId = serviceId;
+        SelectedCarService.Mileage = mileage;
+        _db.SaveChanges();
+
+        SelectedCarService = null;
+        ClearCarServiceFields();
+        LoadTeenused();
+    }
+
+    private void ClearCarServiceFields()
+    {
+        service_date.Value = DateTime.Now;
+        service_time.Value = DateTime.Now;
+        service_carComboBox.SelectedIndex = 0;
+        service_serviceComboBox.SelectedIndex = 0;
+        service_mileage.Text = "";
+    }
+
+
+    private void PutSelectedCarService(CarService carService)
+    {
+        SelectedCarService = carService;
+        service_carComboBox.SelectedItem = carService.Car;
+        service_serviceComboBox.SelectedItem = carService.Service;
+        service_mileage.Text = carService.Mileage.ToString();
+        service_date.Value = carService.DateOfService;
+        service_time.Value = carService.DateOfService;
     }
 }

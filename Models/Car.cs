@@ -16,6 +16,11 @@ public class Car
     {
         return $"{Brand} {Model} ({RegistrationNumber})";
     }
+
+    public bool Match(string filter)
+    {
+        return Brand.Contains(filter) || Model.Contains(filter) || RegistrationNumber.Contains(filter);
+    } 
 }
 
 public class Owner
@@ -29,6 +34,11 @@ public class Owner
     {
         return $"{FullName}";
     }
+
+    public bool Match(string filter)
+    {
+        return FullName.Contains(filter) || Phone.Contains(filter);
+    }
 }
 
 public class Service
@@ -37,6 +47,16 @@ public class Service
     public string Name { get; set; }
     public float Price { get; set; }
     public List<CarService> CarServices { get; set; }
+
+    public bool Match(string filter)
+    {
+        return Name.Contains(filter);
+    }
+
+    public override string ToString()
+    {
+        return $"{Name}, {Price}€";
+    }
 }
 
 public class CarService
@@ -47,4 +67,9 @@ public class CarService
     public int Mileage { get; set; }
     public Car Car { get; set; }
     public Service Service { get; set; }
+
+    public bool Match(string filter)
+    {
+        return Car.Match(filter) || Service.Match(filter);
+    }
 }
