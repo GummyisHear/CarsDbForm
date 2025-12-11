@@ -9,6 +9,7 @@ public class Car
     public int OwnerId { get; set; }
     public Owner Owner { get; set; }
     public List<CarService> CarServices { get; set; }
+    public byte[]? Picture { get; set; }
 
     public string DisplayName => $"{Brand} {Model} ({RegistrationNumber})";
 
@@ -55,7 +56,7 @@ public class Service
 
     public override string ToString()
     {
-        return $"{Name}, {Price}€";
+        return $"{Name}";
     }
 }
 
@@ -64,12 +65,13 @@ public class CarService
     public int CarId { get; set; }
     public int ServiceId { get; set; }
     public DateTime DateOfService { get; set; }
-    public int Mileage { get; set; }
+    public bool Paid { get; set; }
+    public float PaidPrice { get; set; }
     public Car Car { get; set; }
     public Service Service { get; set; }
 
     public bool Match(string filter)
     {
-        return Car.Match(filter) || Service.Match(filter);
+        return Car.Match(filter) || Service.Match(filter) || DateOfService.ToString().Contains(filter);
     }
 }

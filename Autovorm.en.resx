@@ -126,7 +126,19 @@
   <data name="servicesPage.Text" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="owner_updateBtn.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 17</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 21</value>
   </data>
@@ -157,32 +169,41 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Full Name</value>
   </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 200</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Picture</value>
+  </data>
   <data name="imgList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
-        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA6gQAAAJNU0Z0AUkBTAMBAQAB
-        aAEAAWgBAAEdAQABHQEABP8BIQEACP8BQgFNATYHAAE2AwABKAMAAXQDAAEdAwABAQEAASAFAAGQATT/
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4AQAAAJNU0Z0AUkBTAMBAQAB
+        iAEAAYgBAAEdAQABHQEABP8BIQEACP8BQgFNATYHAAE2AwABKAMAAXQDAAEdAwABAQEAASAFAAGQATT/
         AP8A/wD/AP8A3wADDAEPA1EBoQNDAXf/AMEAAwUBBgNYAb0CAAErAf8DTAGR/wC9AAQBA1IBoAIAASsB
-        /wJUAVwB7QMXAR//AL0AA0YBfQIAASsB/wI1AUIB+AMqAT//AKEAAwUBBgMJAQwEARAAAzgBWwINATgB
-        /gINATgB/gM4AVz/AJkAAiYBJwE5A1ABnQJfAWAB4AINATgB/gIAASsB/wI9AUgB9QNZAcMDQAFwAwsB
-        DgMpAT0CNQFCAfgCAAErAf8DRgF+/wCVAAMPARQDVQGtAgABKwH/AkEBUAH0A1UBtANKAYoDRgGBA1AB
-        mgNcAdYCAAErAf8CVQFaAeoDXAHnAgABKwH/A1IBoAQB/wCRAAMXAR8DXgHdAjUBSAH2A0QBewMLAQ4U
-        AAImAScBOQNZAcYCAAErAf8CXwFgAdsDBQEG/wCRAAMIAQoDXQHUAlgBWgHpAyMBMiAAAwMBBANOAZcC
-        AAErAf8DOgFg/wCRAANJAYcCIQE8AfoDJQE3KAAEAQNVAa8CTgFXAfEDEgEX/wCJAAMMAQ8CQQFQAfQD
-        TAGOMAADEgEYAkEBUAH0A0gBhP8AiQADOAFbAg0BOAH+AxgBIDQAA1EBngJfAWAB2/8AiQADTQGSA1wB
-        2TgAAzYBWQIAASsB/wMPARP/AIUAA1QBqwNYAbo4AAMnAToCAAErAf8DHwEs/wCFAANTAacDWQG+OAAD
-        KQE+AgABKwH/Ax0BKf8AhQADSQGHAlsBYAHmOAADPAFmAhoBKwH8AwkBC/8AhQADLwFJAgABKwH/AyUB
-        NjQAA1UBtANdAcn/AIkAAwQBBQNbAeQDVgGwMAADIwEyAhoBQAH9Az4Bav8AjQADOwFjAgABKwH/AzoB
-        YigAAwsBDgNbAdMDXQHcAwYBCP8AjQAEAQNVAa0CIQErAfsDPQFnIAADEwEaA1wByAI4AU0B9wMmATj/
-        AJUAAwcBCQNWAbICAAErAf8DVwG5AysBQQQCDAADEQEWA0MBdwJUAVwB7QJKAVcB8gMuAUj/AJ0ABAID
-        QAFwAlMBWAHuAgABKwH/Ak4BVwHvA1oBxwNaAb8DWwHYAhoBQAH9AgABKwH/A1kBuwMbASb/AKkAAwoB
-        DQM6AWADUQGiA1kBxgNbAc0DWAG4A0kBhQMjATP/AP8A/wD/AP8A/wD/AAMAAUIBTQE+BwABPgMAASgD
-        AAF0AwABHQMAAQEBAAEBBQAB0AEBFgAD/wEAA/8B+AwAA/8B+AwAA/8B+AwAAv8B/AF4DAAC/wH4AXgM
-        AAL/AfABeAwAAv8B8AH4DAAB/wHxAeEB+AwAAf8BgAEDAfgMAAH+AQABAwH4DAAB/AEfAQcB+AwAAfgB
-        fwGHAfgMAAH4Af8BwwH4DAAB8QH/AeMB+AwAAfEB/wHzAfgMAAHzAf8B8QH4DAAB8wH/AfEB+AwAAfMB
-        /wHxAfgMAAHzAf8B8QH4DAAB8QH/AfMB+AwAAfEB/wHjAfgMAAH4Af8BwwH4DAAB+AF/AYcB+AwAAfwB
-        DgEPAfgMAAH+AQABHwH4DAAB/wGAAX8B+AwAA/8B+AwAA/8B+AwAA/8B+AwACw==
+        /wJcAV4B7QMXAR//AL0AA0YBfQIAASsB/wI7AUYB+AMqAT//AKEAAwUBBgMJAQwEARAAAzgBWwIRATwB
+        /gIRATwB/gM4AVz/AJkAAiYBJwE5A1ABnQNgAeACEQE8Af4CAAErAf8CRAFMAfUDWQHDA0ABcAMLAQ4D
+        KQE9AjsBRgH4AgABKwH/A0YBfv8AlQADDwEUA1UBrQIAASsB/wJKAVMB9ANVAbQDSgGKA0YBgQNQAZoD
+        XAHWAgABKwH/AlwBXQHqA1wB5wIAASsB/wNSAaAEAf8AkQADFwEfA14B3QI/AUgB9gNEAXsDCwEOFAAC
+        JgEnATkDWQHGAgABKwH/A2AB2wMFAQb/AJEAAwgBCgNdAdQDWgHpAyMBMiAAAwMBBANOAZcCAAErAf8D
+        OgFg/wCRAANJAYcCJQFEAfoDJQE3KAAEAQNVAa8CVgFbAfEDEgEX/wCJAAMMAQ8CSgFTAfQDTAGOMAAD
+        EgEYAkoBUwH0A0gBhP8AiQADOAFbAhEBPAH+AxgBIDQAA1EBngNgAdv/AIkAA00BkgNcAdk4AAM2AVkC
+        AAErAf8DDwET/wCFAANUAasDWAG6OAADJwE6AgABKwH/Ax8BLP8AhQADUwGnA1kBvjgAAykBPgIAASsB
+        /wMdASn/AIUAA0kBhwNhAeY4AAM8AWYCIgErAfwDCQEL/wCFAAMvAUkCAAErAf8DJQE2NAADVQG0A10B
+        yf8AiQADBAEFA1sB5ANWAbAwAAMjATICIgFAAf0DPgFq/wCNAAM7AWMCAAErAf8DOgFiKAADCwEOA1sB
+        0wNdAdwDBgEI/wCNAAQBA1UBrQIhASsB+wM9AWcgAAMTARoDXAHIAkABUQH3AyYBOP8AlQADBwEJA1YB
+        sgIAASsB/wNXAbkDKwFBBAIMAAMRARYDQwF3AlwBXgHtAlMBWgHyAy4BSP8AnQAEAgNAAXACWAFcAe4C
+        AAErAf8CVgFZAe8DWgHHA1oBvwNbAdgCIgFAAf0CAAErAf8DWQG7AxsBJv8AqQADCgENAzoBYANRAaID
+        WQHGA1sBzQNYAbgDSQGFAyMBM/8A/wD/AP8A/wD/AP8AAwABQgFNAT4HAAE+AwABKAMAAXQDAAEdAwAB
+        AQEAAQEFAAHQAQEWAAP/AQAD/wH4DAAD/wH4DAAD/wH4DAAC/wH8AXgMAAL/AfgBeAwAAv8B8AF4DAAC
+        /wHwAfgMAAH/AfEB4QH4DAAB/wGAAQMB+AwAAf4BAAEDAfgMAAH8AR8BBwH4DAAB+AF/AYcB+AwAAfgB
+        /wHDAfgMAAHxAf8B4wH4DAAB8QH/AfMB+AwAAfMB/wHxAfgMAAHzAf8B8QH4DAAB8wH/AfEB+AwAAfMB
+        /wHxAfgMAAHxAf8B8wH4DAAB8QH/AeMB+AwAAfgB/wHDAfgMAAH4AX8BhwH4DAAB/AEOAQ8B+AwAAf4B
+        AAEfAfgMAAH/AYABfwH4DAAD/wH4DAAD/wH4DAAD/wH4DAAL
 </value>
   </data>
   <data name="cars_updateBtn.Text" xml:space="preserve">
@@ -195,7 +216,7 @@
     <value>Insert</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 202</value>
+    <value>237, 169</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 21</value>
@@ -212,6 +233,27 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Brand</value>
   </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 3</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 37</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="service_updateBtn.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 123</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 21</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 21</value>
   </data>
@@ -224,11 +266,14 @@
   <data name="service_insertBtn.Text" xml:space="preserve">
     <value>Insert</value>
   </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 18</value>
+  </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
+    <value>77, 21</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Mileage</value>
+    <value>Paid Price</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 88</value>
