@@ -97,16 +97,17 @@ public partial class Autovorm : Form
         // 
         // tabControl1
         // 
+        resources.ApplyResources(tabControl1, "tabControl1");
         tabControl1.Controls.Add(ownersPage);
         tabControl1.Controls.Add(carsPage);
         tabControl1.Controls.Add(servicesPage);
-        resources.ApplyResources(tabControl1, "tabControl1");
         tabControl1.Name = "tabControl1";
         tabControl1.SelectedIndex = 0;
         tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
         // 
         // ownersPage
         // 
+        resources.ApplyResources(ownersPage, "ownersPage");
         ownersPage.BackColor = Color.White;
         ownersPage.Controls.Add(owner_updateBtn);
         ownersPage.Controls.Add(label13);
@@ -121,7 +122,6 @@ public partial class Autovorm : Form
         ownersPage.Controls.Add(label1);
         ownersPage.Controls.Add(owner_fullName);
         ownersPage.Controls.Add(ownersDataGridView);
-        resources.ApplyResources(ownersPage, "ownersPage");
         ownersPage.Name = "ownersPage";
         // 
         // owner_updateBtn
@@ -156,8 +156,8 @@ public partial class Autovorm : Form
         // 
         // pictureBox1
         // 
-        pictureBox1.Image = Properties.Resources.owner;
         resources.ApplyResources(pictureBox1, "pictureBox1");
+        pictureBox1.Image = Properties.Resources.owner;
         pictureBox1.Name = "pictureBox1";
         pictureBox1.TabStop = false;
         // 
@@ -197,13 +197,14 @@ public partial class Autovorm : Form
         // 
         // ownersDataGridView
         // 
-        ownersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         resources.ApplyResources(ownersDataGridView, "ownersDataGridView");
+        ownersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         ownersDataGridView.Name = "ownersDataGridView";
         ownersDataGridView.RowHeaderMouseClick += ownersDataGridView_RowHeaderMouseClick;
         // 
         // carsPage
         // 
+        resources.ApplyResources(carsPage, "carsPage");
         carsPage.Controls.Add(label15);
         carsPage.Controls.Add(car_pictureBox);
         carsPage.Controls.Add(cars_ownerSearchBtn);
@@ -223,7 +224,6 @@ public partial class Autovorm : Form
         carsPage.Controls.Add(cars_regNumber);
         carsPage.Controls.Add(cars_model);
         carsPage.Controls.Add(cars_brand);
-        resources.ApplyResources(carsPage, "carsPage");
         carsPage.Name = "carsPage";
         carsPage.UseVisualStyleBackColor = true;
         // 
@@ -234,10 +234,10 @@ public partial class Autovorm : Form
         // 
         // car_pictureBox
         // 
+        resources.ApplyResources(car_pictureBox, "car_pictureBox");
         car_pictureBox.BackColor = Color.PaleTurquoise;
         car_pictureBox.BorderStyle = BorderStyle.FixedSingle;
         car_pictureBox.Cursor = Cursors.Hand;
-        resources.ApplyResources(car_pictureBox, "car_pictureBox");
         car_pictureBox.Name = "car_pictureBox";
         car_pictureBox.TabStop = false;
         car_pictureBox.Click += car_pictureBox_Click;
@@ -354,6 +354,7 @@ public partial class Autovorm : Form
         // 
         // servicesPage
         // 
+        resources.ApplyResources(servicesPage, "servicesPage");
         servicesPage.Controls.Add(service_updateBtn);
         servicesPage.Controls.Add(label14);
         servicesPage.Controls.Add(service_time);
@@ -371,7 +372,6 @@ public partial class Autovorm : Form
         servicesPage.Controls.Add(service_date);
         servicesPage.Controls.Add(label9);
         servicesPage.Controls.Add(label6);
-        resources.ApplyResources(servicesPage, "servicesPage");
         servicesPage.Name = "servicesPage";
         servicesPage.UseVisualStyleBackColor = true;
         // 
@@ -429,8 +429,8 @@ public partial class Autovorm : Form
         // 
         // service_dataGrid
         // 
-        service_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         resources.ApplyResources(service_dataGrid, "service_dataGrid");
+        service_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         service_dataGrid.Name = "service_dataGrid";
         service_dataGrid.RowHeaderMouseClick += service_dataGrid_RowHeaderMouseClick;
         // 
@@ -943,7 +943,7 @@ public partial class Autovorm : Form
         if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
             return;
 
-        e.Handled = true;
+        e.Handled = true; // Blokeeri mittesoovitud sümboli sisestamine
 
         if (!_isFlashing)
         {
@@ -951,7 +951,7 @@ public partial class Autovorm : Form
             textBox.BackColor = Color.LightCoral;
             _isFlashing = true;
 
-            await Task.Delay(150);
+            await Task.Delay(150); // Asünkroonne viivitus
 
             textBox.BackColor = original;
             _isFlashing = false;
